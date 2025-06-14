@@ -1,7 +1,41 @@
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif;
-  margin: auto;
-  max-width: 38rem;
-  padding: 2rem;
+:root {
+  --purple: #E7CAFE;
+  --dark-purple: #9A65A6;
+  --cream: #FFF9EF;
+  --pink: #F8B9C4;
+  --blue: #BEE3F7;
 }
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+}
+
+#main-container {
+  width: 97%;
+  height: 95vh;
+  background-color: var(--purple);
+  border: var(--dark-purple);
+  border-width: 1rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  outline: 0.12rem solid var(--dark-purple);
+  align-self: center;
+  margin-top: 0.5rem;
+}
+
+#body {
+  width: 95%;
+  height: 77vh;
+  background-color: var(--cream);
+  display: flex;
+  align-self: flex-end;
+  margin-bottom: 0.5rem;
+  outline: 0.12rem solid var(--dark-purple);
+}
+
