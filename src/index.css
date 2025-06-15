@@ -1,3 +1,4 @@
+
 :root {
   --purple: #E7CAFE;
   --dark-purple: #9A65A6;
@@ -17,25 +18,83 @@ body {
 
 #main-container {
   width: 97%;
-  height: 95vh;
+  height: 93vh;
   background-color: var(--purple);
   border: var(--dark-purple);
-  border-width: 1rem;
   border-radius: 5px;
   display: flex;
-  justify-content: center;
-  outline: 0.12rem solid var(--dark-purple);
-  align-self: center;
-  margin-top: 0.5rem;
+  flex-direction: column;
+  outline: 0.14rem solid var(--dark-purple);
 }
 
 #body {
+  display: flex;
   width: 95%;
   height: 77vh;
   background-color: var(--cream);
-  display: flex;
-  align-self: flex-end;
   margin-bottom: 0.5rem;
   outline: 0.12rem solid var(--dark-purple);
+  align-self: flex-end;
+  margin-right: 0.5rem;
+  flex-direction: column;
 }
 
+#header {
+  width: 95%;
+  height: 20vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1rem;
+  flex-direction: row;
+  -webkit-app-region: drag;
+}
+
+#app-name {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--dark-purple);
+  margin-left: 0.6rem;
+}
+
+#close {
+  -webkit-app-region: no-drag;
+}
+
+#cat-container {
+  width: 100%;
+  height: 16vh;
+}
+
+#timer-container {
+  width: 100%;
+  height: 23vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#btns-container {
+  width: 100%;
+  height: 18vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#settings-container {
+  width: 100%;
+  height: 9vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#timer-settings {
+  padding-right: 0.5rem;
+}
+
+#theme-settings {
+  padding-left: 0.5rem;
+}
