@@ -144,3 +144,50 @@ body {
   font-size: 2rem;
   font-family: 'Pixelify Sans', sans-serif;
 }
+
+#start-text {
+  color: var(--dark-purple);
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+#reset-text {
+  color: var(--dark-purple);
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.button-group {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.button-group:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#start-div,
+#reset-div {
+  position: absolute;
+  width: 90px;
+  height: 42px;
+  left: 6px; 
+  top: 8px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#start-text,
+#reset-text {
+  color: var(--dark-purple);
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  pointer-events: none; 
+}

@@ -5,81 +5,38 @@ document.getElementById("close").addEventListener("click", () => {
 });
 
 
-/*
-//TIMER FUNCTIONALITY
+
+const startWrapper = document.getElementById("start-wrapper");
+const startText = document.getElementById("start-text");
+let isTimerRunning = false;
+let countdownInterval;
 let startingMinutes = 25;
 let time = startingMinutes * 60;
-const timerElement = document.getElementById("text");
-let timerRunning = false;
-let startBtnClicked = false;
-let startButton = document.getElementById("start");
-let countdownInterval;
-
-startButton.addEventListener('click', () => {
-    timerFlow();
-})
-
-
-
-function timerFlow() {
-    if (startBtnClicked) {
-        startTimer();
-    }
-}
-
-function startTimer() {
-    timerRunning = true;
-    clearInterval(countdownInterval);
-    time = startingMinutes * 60;
-    countdownInterval = setInterval(updateCountdown, 1000);
-    timerFlow();
-}
 
 function updateCountdown() {
-    let minutes = Math.floor(time/60);
-    let seconds = time%60;
+  let minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  document.getElementById("text").innerText = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
 
-    timerElement.innerHTML= `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-
-    if (time > 0) {
-        time--
-    } else if (time > 0 && timerRunning) {
-        //stopTimer function
-    } else {
-        clearInterval(countdownInterval);
-    }
-
-}
-*/
-
-let startingMinutes = 25;
-let time = startingMinutes;
-const timerElement = document.getElementById("text");
-
-function updateCountdown() {
-    let minutes = Math.floor(time / 60);
-    let seconds = time % 60;
-
-    timerElement.innerHTML = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-
-    if (time > 0) {
-        time--;
-    } else {
-        clearInterval(countdownInterval);
-    }
-}
-
-const startButton = document.getElementById("start");
-let countdownInterval;
-
-startButton.addEventListener('click', () => {
+  if (time > 0) {
+    time--;
+  } else {
     clearInterval(countdownInterval);
-    time = startingMinutes * 60;
+    isTimerRunning = false;
+    startText.innerText = "START";
+  }
+}
+
+startWrapper.addEventListener("click", (event) => {
+  event.preventDefault(); // ✅ This stops any default behavior
+
+  if (!isTimerRunning) {
     countdownInterval = setInterval(updateCountdown, 1000);
-    showNextImage();
+    isTimerRunning = true;
+    startText.innerText = "STOP";
+  } else {
+    clearInterval(countdownInterval);
+    isTimerRunning = false;
+    startText.innerText = "START";
+  }
 });
-
-
-//Create timer settings window
-
-
