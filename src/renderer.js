@@ -5,7 +5,7 @@ document.getElementById("close").addEventListener("click", () => {
 });
 
 
-
+//start-stop timer
 const startWrapper = document.getElementById("start-wrapper");
 const startText = document.getElementById("start-text");
 let isTimerRunning = false;
@@ -28,7 +28,7 @@ function updateCountdown() {
 }
 
 startWrapper.addEventListener("click", (event) => {
-  event.preventDefault(); // ✅ This stops any default behavior
+  event.preventDefault(); 
 
   if (!isTimerRunning) {
     countdownInterval = setInterval(updateCountdown, 1000);
@@ -40,3 +40,24 @@ startWrapper.addEventListener("click", (event) => {
     startText.innerText = "START";
   }
 });
+
+const resetWrapper = document.getElementById("reset-wrapper");
+const timerDisplay = document.getElementById("text");
+
+resetWrapper.addEventListener("click", (event) => {
+    event.preventDefault();
+    clearInterval(countdownInterval);
+    isTimerRunning = false;
+    time = startingMinutes * 60;
+    timerDisplay.innerText = "25:00";
+
+    startText.innerText = "START"
+})
+
+//Open timer settings window
+
+document.getElementById("timer-settings").addEventListener("click", () => {
+  ipcRenderer.send("open-timer-settings");
+});
+
+
