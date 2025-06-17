@@ -1,4 +1,4 @@
-const { ipcRenderer } = require('electron');
+const { ipcRenderer, BrowserWindow } = require('electron');
 
 document.getElementById("close").addEventListener("click", () => {
   ipcRenderer.send("close-app");
@@ -76,5 +76,10 @@ startButton.addEventListener('click', () => {
     clearInterval(countdownInterval);
     time = startingMinutes * 60;
     countdownInterval = setInterval(updateCountdown, 1000);
+    showNextImage();
 });
+
+
+//Create timer settings window
+
 

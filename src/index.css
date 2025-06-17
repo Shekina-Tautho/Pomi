@@ -1,7 +1,7 @@
 
 :root {
   --purple: #E7CAFE;
-  --dark-purple: #9A65A6;
+  --dark-purple: #6C4A71;
   --cream: #FFF9EF;
   --pink: #F8B9C4;
   --blue: #BEE3F7;
@@ -67,6 +67,7 @@ body {
   height: 16vh;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 #timer-container {
@@ -133,7 +134,13 @@ body {
 
 #text {
   z-index: 3;
-  color: #9A65A6;
+  color: var(--dark-purple);
   font-family: 'Press Start 2P', cursive;
   font-size: 2rem;
+}
+
+#category {
+  color: var(--dark-purple);
+  font-size: 2rem;
+  font-family: 'Pixelify Sans', sans-serif;
 }
