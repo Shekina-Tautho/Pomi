@@ -8,6 +8,13 @@ module.exports = {
   rebuildConfig: {},
   makers: [
     {
+    name: '@electron-forge/maker-squirrel',
+    config: {
+      name: 'pomi',
+      setupIcon: path.join(__dirname, 'Assets', 'Logo', 'favicon.ico') 
+    }
+    },
+    {
       name: '@electron-forge/maker-squirrel',
       config: {},
     },
