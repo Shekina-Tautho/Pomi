@@ -58,6 +58,13 @@ ipcMain.on("open-timer-settings", () => {
   });
 });
 
+
+// ✅ Forward updated timer settings to main window
+ipcMain.on("update-settings", (event, settings) => {
+  mainWindow.webContents.send("apply-settings", settings);
+});
+
+
 // Create main window when ready
 app.whenReady().then(() => {
   createWindow();

@@ -21,26 +21,61 @@
                 </div>
                 <div id="settings-container">
                     <div id="focus-container" class="containers">
-                        <p id="focus-text" class="settings-label">FOCUS TIME</p>
-                        <img src="C:\Users\USER\Desktop\Pomi\Assets\Settings\Container.png" alt="value-container" id="focus-value-container" width="70" height="30" class="container-img">
+                        <p class="settings-label">FOCUS TIME</p>
+                        <div class="setting-wrapper">
+                            <img src="C:\Users\USER\Desktop\Pomi\Assets\Settings\Container.png" alt="value-container" class="container-img">
+                            
+                            <span class="time-value" id="focus-value">25</span>
+
+                            <div class="up-down-buttons">
+                            <button class="up-btn">▲</button>
+                            <button class="down-btn">▼</button>
+                            </div>
+                        </div>
                     </div>
+
                     <div id="break-container" class="containers">
-                        <p id="break-text" class="settings-label">BREAK TIME</p>
-                        <img src="C:\Users\USER\Desktop\Pomi\Assets\Settings\Container.png" alt="value-container" id="break-value-container" width="70" height="30" class="container-img">
+                        <p class="settings-label">BREAK TIME</p>
+                        <div class="setting-wrapper">
+                            <img src="C:\Users\USER\Desktop\Pomi\Assets\Settings\Container.png" alt="value-container" class="container-img">
+                            
+                            <span class="time-value" id="break-value">25</span>
+
+                            <div class="up-down-buttons">
+                            <button class="up-btn">▲</button>
+                            <button class="down-btn">▼</button>
+                            </div>
+                        </div>
                     </div>
+
                     <div id="longBreak-container" class="containers">
-                        <p id="longBreak-text" class="settings-label">LONG BREAK TIME</p>
-                        <img src="C:\Users\USER\Desktop\Pomi\Assets\Settings\Container.png" alt="value-container" id="longBreak-value-container" width="70" height="30" class="container-img">
+                        <p class="settings-label">LONG BREAK TIME</p>
+                        <div class="setting-wrapper">
+                            <img src="C:\Users\USER\Desktop\Pomi\Assets\Settings\Container.png" alt="value-container" class="container-img">
+                            
+                            <span class="time-value" id="longBreak-value">25</span>
+
+                            <div class="up-down-buttons">
+                            <button class="up-btn">▲</button>
+                            <button class="down-btn">▼</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
+
                 <div id="sound-container">
-                    <img src="C:\Users\USER\Desktop\Pomi\Assets\Settings\checkbox.png" alt="checkbox container" id="checkbox-img" width="20" height="20">
-                    <p id="sound-text">Alarm Sound</p>
+                <label id="check-container">
+                    <input type="checkbox" id="alarm-checkbox">
+                    <span class="checkmark"></span>
+                    <img src="C:\Users\USER\Desktop\Pomi\Assets\Settings\checkbox.png" alt="checkbox" width="20" height="20">
+                </label>
+                <p id="sound-text">Alarm Sound</p>
                 </div>
+
                 <div id="save-button">
-                    <p id="save-text">SAVE</p>
+                    <p id="save-text" class="scale-hover darken-hover">SAVE</p>
                 </div>
             </div>
         </div>
+    <script src="timer-settings.js"></script>
     </body>
 </html>
