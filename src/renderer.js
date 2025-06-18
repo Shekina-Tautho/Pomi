@@ -133,3 +133,108 @@ ipcRenderer.on("apply-settings", (event, settings) => {
 document.getElementById("timer-settings").addEventListener("click", () => {
   ipcRenderer.send("open-timer-settings");
 });
+
+
+//THEMES
+const themes = [
+  {
+    name: "lightGreen",
+    mainBg: "#D1F5CF",
+    mainOutline: "#74CD71",
+    bodyBg: "#E3F4F8",
+    bodyOutline: "#74CD71",
+    textColor: "#2D3A4A",
+    assets: {
+      close: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Exit Button.png",
+      timerContainer: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Timer Container.png",
+      start: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Start Container.png",
+      reset: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Reset Container.png",
+      timerSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Timer Settings Logo.png",
+      themeSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Theme Settings Logo.png",
+    }
+  },
+  {
+    name: "darkGreen",
+    mainBg: "#4F6E6A",
+    mainOutline: "#74CD71",
+    bodyBg: "#2C3A47",
+    bodyOutline: "#74CD71",
+    textColor: "#F1F1F1",
+    assets: {
+      close: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Exit Button.png",
+      timerContainer: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Dark\\Green\\Timer Container.png",
+      start: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Dark\\Green\\Start Container.png",
+      reset: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Dark\\Green\\Reset Container.png",
+      timerSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Timer Settings Logo.png",
+      themeSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Theme Settings Logo.png",
+    }
+  },
+  {
+    name: "lightPurple",
+    mainBg: "#E7CAFE",
+    mainOutline: "#9A65A6",
+    bodyBg: "#FFF9EF",
+    bodyOutline: "#9A65A6",
+    textColor: "#6C4A71",
+    assets: {
+      close: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Close-button.png",
+      timerContainer: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Timer-Container.png",
+      start: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Start-button.png",
+      reset: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Reset-button.png",
+      timerSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Timer-Settings Logo.png",
+      themeSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Theme-settings logo.png",
+    }
+  },
+  {
+    name: "darkPurple",
+    mainBg: "#6D5A7A",
+    mainOutline: "#9A65A6",
+    bodyBg: "#4B3B4F",
+    bodyOutline: "#9A65A6",
+    textColor: "#FDF7FA",
+    assets: {
+      close: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Close-button.png",
+      timerContainer: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Dark\\Purple\\Timer Container.png",
+      start: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Dark\\Purple\\Start Container.png",
+      reset: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Dark\\Purple\\Reset Container.png",
+      timerSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Timer-Settings Logo.png",
+      themeSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Theme-settings logo.png",
+    }
+  }
+];
+
+let currentThemeIndex = parseInt(localStorage.getItem("theme-index")) || 0;
+
+function applyTheme(theme) {
+  const mainContainer = document.getElementById("main-container");
+  const body = document.getElementById("body");
+
+  mainContainer.style.backgroundColor = theme.mainBg;
+  mainContainer.style.outline = `3px solid ${theme.mainOutline}`;
+
+  body.style.backgroundColor = theme.bodyBg;
+  body.style.outline = `3px solid ${theme.bodyOutline}`;
+
+  document.getElementById("app-name").style.color = theme.textColor;
+  document.getElementById("category").style.color = theme.textColor;
+  document.getElementById("text").style.color = theme.textColor;
+  document.getElementById("start-text").style.color = theme.textColor;
+  document.getElementById("reset-text").style.color = theme.textColor;
+
+  document.getElementById("close").src = theme.assets.close;
+  document.getElementById("img-timerContainer").src = theme.assets.timerContainer;
+  document.getElementById("start-button").src = theme.assets.start;
+  document.getElementById("reset-button").src = theme.assets.reset;
+  document.getElementById("timer-settings").src = theme.assets.timerSettings;
+  document.getElementById("theme-settings").src = theme.assets.themeSettings;
+}
+
+document.getElementById("theme-settings").addEventListener("click", () => {
+  currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+  localStorage.setItem("theme-index", currentThemeIndex);
+  applyTheme(themes[currentThemeIndex]);
+});
+
+// Apply on load
+applyTheme(themes[currentThemeIndex]);
+
