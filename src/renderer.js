@@ -22,7 +22,7 @@ let durations = {
 
 let currentRound = 0; // for tracking long breaks
 let isAlarmEnabled = false;
-const alarmSound = new Audio("C:\Users\USER\Desktop\Pomi\Assets\Sounds\beep-6-96243.mp3"); // Use correct path to your audio file
+const alarmSound = new Audio("C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Sounds\\beep-6-96243.mp3"); // Use correct path to your audio file
 
 
 
@@ -36,6 +36,13 @@ function updateCountdown() {
   } else {
     clearInterval(countdownInterval);
     isTimerRunning = false;
+
+    // ✅ Play alarm if enabled
+    if (isAlarmEnabled && alarmSound) {
+      alarmSound.play().catch((e) => {
+        console.warn("Alarm playback failed:", e);
+      });
+    }
 
     // Switch modes
     if (currentMode === "focus") {
@@ -57,6 +64,7 @@ function updateCountdown() {
     startText.innerText = "STOP";
   }
 }
+
 
 
 function updateCategoryText() {
@@ -121,4 +129,7 @@ ipcRenderer.on("apply-settings", (event, settings) => {
   updateCategoryText();
 });
 
-
+// Open Timer Settings window when icon is clicked
+document.getElementById("timer-settings").addEventListener("click", () => {
+  ipcRenderer.send("open-timer-settings");
+});
