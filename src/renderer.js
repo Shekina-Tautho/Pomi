@@ -6,7 +6,7 @@ document.getElementById("close").addEventListener("click", () => {
 
 
 //start-stop timer
-let currentMode = "focus"; // Can be "focus", "break", or "longBreak"
+let currentMode = "focus"; 
 const categoryText = document.getElementById("category");
 const startWrapper = document.getElementById("start-wrapper");
 const startText = document.getElementById("start-text");
@@ -20,9 +20,9 @@ let durations = {
   longBreak: 15
 };
 
-let currentRound = 0; // for tracking long breaks
+let currentRound = 0; 
 let isAlarmEnabled = false;
-const alarmSound = new Audio("C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Sounds\\beep-6-96243.mp3"); // Use correct path to your audio file
+const alarmSound = new Audio("C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Sounds\\beep-6-96243.mp3"); 
 
 
 
@@ -37,14 +37,14 @@ function updateCountdown() {
     clearInterval(countdownInterval);
     isTimerRunning = false;
 
-    // ✅ Play alarm if enabled
+
     if (isAlarmEnabled && alarmSound) {
       alarmSound.play().catch((e) => {
         console.warn("Alarm playback failed:", e);
       });
     }
 
-    // Switch modes
+  
     if (currentMode === "focus") {
       currentRound++;
       currentMode = (currentRound % 4 === 0) ? "longBreak" : "break";
@@ -129,7 +129,7 @@ ipcRenderer.on("apply-settings", (event, settings) => {
   updateCategoryText();
 });
 
-// Open Timer Settings window when icon is clicked
+
 document.getElementById("timer-settings").addEventListener("click", () => {
   ipcRenderer.send("open-timer-settings");
 });

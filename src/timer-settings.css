@@ -161,19 +161,19 @@ width: 97%;
   margin-left: 20px;
 }
 
-/* Hide the native checkbox */
+
 #check-container input[type="checkbox"] {
   display: none;
 }
 
-/* Default state of checkmark (invisible) */
+
 #check-container .checkmark {
   position: absolute;
   top: 2px;
   left: 5px;
   width: 6px;
   height: 12px;
-  border: solid #a87554;  /* or pastel tone */
+  border: solid #a87554;  
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
   opacity: 0;

@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('node:path');
 
-// Handle creating/removing shortcuts on Windows when installing/uninstalling.
+
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
@@ -25,16 +25,16 @@ const createWindow = () => {
 
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
-  // Optional: Remove this in production
+ 
   mainWindow.webContents.openDevTools();
 };
 
-// ✅ IPC Listener for closing the app
+
 ipcMain.on('close-app', () => {
   BrowserWindow.getFocusedWindow().close();
 });
 
-// ✅ IPC Listener for opening the settings window
+
 ipcMain.on("open-timer-settings", () => {
   const settingsWindow = new BrowserWindow({
     width: 290,
@@ -59,13 +59,13 @@ ipcMain.on("open-timer-settings", () => {
 });
 
 
-// ✅ Forward updated timer settings to main window
+
 ipcMain.on("update-settings", (event, settings) => {
   mainWindow.webContents.send("apply-settings", settings);
 });
 
 
-// Create main window when ready
+
 app.whenReady().then(() => {
   createWindow();
 
@@ -76,7 +76,7 @@ app.whenReady().then(() => {
   });
 });
 
-// Quit on all windows closed (except macOS)
+
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
