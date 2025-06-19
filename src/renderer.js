@@ -1,4 +1,5 @@
 const { ipcRenderer, BrowserWindow } = require('electron');
+const path = require("path");
 
 document.getElementById("close").addEventListener("click", () => {
   ipcRenderer.send("close-app");
@@ -22,7 +23,7 @@ let durations = {
 
 let currentRound = 0; 
 let isAlarmEnabled = false;
-const alarmSound = new Audio("C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Sounds\\beep-6-96243.mp3"); 
+const alarmSound = new Audio(`file://${path.join(__dirname, "Assets", "Sounds", "beep-6-96243.mp3")}`);
 
 
 
@@ -145,12 +146,12 @@ const themes = [
     bodyOutline: "#74CD71",
     textColor: "#2D3A4A",
     assets: {
-      close: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Exit Button.png",
-      timerContainer: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Timer Container.png",
-      start: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Start Container.png",
-      reset: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Reset Container.png",
-      timerSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Timer Settings Logo.png",
-      themeSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Theme Settings Logo.png",
+      close: `file://${path.join(__dirname, "Assets", "Light", "Green", "Exit Button.png")}`,
+      timerContainer: `file://${path.join(__dirname, "Assets", "Light", "Green", "Timer Container.png")}`,
+      start: `file://${path.join(__dirname, "Assets", "Light", "Green", "Start Container.png")}`,
+      reset: `file://${path.join(__dirname, "Assets", "Light", "Green", "Reset Container.png")}`,
+      timerSettings: `file://${path.join(__dirname, "Assets", "Light", "Green", "Timer Settings Logo.png")}`,
+      themeSettings: `file://${path.join(__dirname, "Assets", "Light", "Green", "Theme Settings Logo.png")}`
     }
   },
   {
@@ -161,12 +162,12 @@ const themes = [
     bodyOutline: "#74CD71",
     textColor: "#F1F1F1",
     assets: {
-      close: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Exit Button.png",
-      timerContainer: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Dark\\Green\\Timer Container.png",
-      start: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Dark\\Green\\Start Container.png",
-      reset: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Dark\\Green\\Reset Container.png",
-      timerSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Timer Settings Logo.png",
-      themeSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Green\\Theme Settings Logo.png",
+      close: `file://${path.join(__dirname, "Assets", "Light", "Green", "Exit Button.png")}`,
+      timerContainer: `file://${path.join(__dirname, "Assets", "Dark", "Green", "Timer Container.png")}`,
+      start: `file://${path.join(__dirname, "Assets", "Dark", "Green", "Start Container.png")}`,
+      reset: `file://${path.join(__dirname, "Assets", "Dark", "Green", "Reset Container.png")}`,
+      timerSettings: `file://${path.join(__dirname, "Assets", "Light", "Green", "Timer Settings Logo.png")}`,
+      themeSettings: `file://${path.join(__dirname, "Assets", "Light", "Green", "Theme Settings Logo.png")}`
     }
   },
   {
@@ -177,12 +178,12 @@ const themes = [
     bodyOutline: "#9A65A6",
     textColor: "#6C4A71",
     assets: {
-      close: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Close-button.png",
-      timerContainer: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Timer-Container.png",
-      start: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Start-button.png",
-      reset: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Reset-button.png",
-      timerSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Timer-Settings Logo.png",
-      themeSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Theme-settings logo.png",
+      close: `file://${path.join(__dirname, "Assets", "Light", "Purple", "Close-button.png")}`,
+      timerContainer: `file://${path.join(__dirname, "Assets", "Light", "Purple", "Timer-Container.png")}`,
+      start: `file://${path.join(__dirname, "Assets", "Light", "Purple", "Start-button.png")}`,
+      reset: `file://${path.join(__dirname, "Assets", "Light", "Purple", "Reset-button.png")}`,
+      timerSettings: `file://${path.join(__dirname, "Assets", "Light", "Purple", "Timer-Settings Logo.png")}`,
+      themeSettings: `file://${path.join(__dirname, "Assets", "Light", "Purple", "Theme-settings logo.png")}`
     }
   },
   {
@@ -193,12 +194,12 @@ const themes = [
     bodyOutline: "#9A65A6",
     textColor: "#FDF7FA",
     assets: {
-      close: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Close-button.png",
-      timerContainer: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Dark\\Purple\\Timer Container.png",
-      start: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Dark\\Purple\\Start Container.png",
-      reset: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Dark\\Purple\\Reset Container.png",
-      timerSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Timer-Settings Logo.png",
-      themeSettings: "C:\\Users\\USER\\Desktop\\Pomi\\Assets\\Light\\Purple\\Theme-settings logo.png",
+      close: `file://${path.join(__dirname, "Assets", "Light", "Purple", "Close-button.png")}`,
+      timerContainer: `file://${path.join(__dirname, "Assets", "Dark", "Purple", "Timer Container.png")}`,
+      start: `file://${path.join(__dirname, "Assets", "Dark", "Purple", "Start Container.png")}`,
+      reset: `file://${path.join(__dirname, "Assets", "Dark", "Purple", "Reset Container.png")}`,
+      timerSettings: `file://${path.join(__dirname, "Assets", "Light", "Purple", "Timer-Settings Logo.png")}`,
+      themeSettings: `file://${path.join(__dirname, "Assets", "Light", "Purple", "Theme-settings logo.png")}`
     }
   }
 ];
