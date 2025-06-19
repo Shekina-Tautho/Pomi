@@ -18,7 +18,7 @@ It was made as a beginner project to explore desktop app development using HTML,
 
 > This is a beginner project made for learning purposes and personal use. Feedback is welcome! :>
 
-[![Download Pomi](https://img.shields.io/badge/Download%20Pomi%20-softgreen?style=for-the-badge&color=ccf7cc&labelColor=ccf7cc)](https://github.com/Shekina-Tautho/Pomi/releases/download/v1.0.0/pomi-1.0.0.Setup.exe)
+[![Download Pomi](https://img.shields.io/badge/Download%20Pomi%20-softgreen?style=for-the-badge&color=ccf7cc&labelColor=ccf7cc)](https://github.com/Shekina-Tautho/Pomi/releases/download/v1.0.1/pomi-1.0.1.Setup.exe)
 
 
 ## 🖼️ Preview
